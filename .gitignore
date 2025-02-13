@@ -1,0 +1,9 @@
+*.pth
+/AI RNN 1.2/*.pth
+/AI RNN 1.0/*.pth
+/Ai RNN 1.5/*.pth
+/*.csv
+*.csv
+/*.xlsx
+/*.pkl
+/Falls

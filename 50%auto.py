@@ -14,7 +14,7 @@ from selenium.common.exceptions import NoSuchElementException
 import keyboard
 import random
 numL = int(0)
-confirm_link, decline_link, rows, a,b = 0, 0, 0, int(input("Рандомный режим? 1-да ")), 1000
+confirm_link, decline_link, rows ,b = 0, 0, 0, 1000
 if a == 1:
     b = int(input("Сколько модерить?"))
 
@@ -57,22 +57,12 @@ def launch_browser():
         # Находим все строки таблицы
         print(i)
         time.sleep(1)
-        if a == 1:
-            if random.randint(0,100) < 3:
-                on_triggered2()
-                time.sleep(0.5)
-                on_triggered3()
-            else:
-                on_triggered1()
-                time.sleep(1)
-                on_triggered3()
-        else:
-            keyboard.add_hotkey('alt+3', on_triggered3)
-            keyboard.add_hotkey('alt+2', on_triggered2)
-            keyboard.add_hotkey('alt+1', on_triggered1)
+        keyboard.add_hotkey('alt+3', on_triggered3)
+        keyboard.add_hotkey('alt+2', on_triggered2)
+        keyboard.add_hotkey('alt+1', on_triggered1)
 
 
-            keyboard.wait('alt+5')
+        keyboard.wait('alt+5')
 
     return driver
 
@@ -107,7 +97,7 @@ def open_link_in_new_tab(driver, url):
 
 
 def start_work_dobro(driver):
-      driver.get("https://dobro.ru/admin/abstract/moderation-tasks/?moderation_task_metadata_filter_admin%5Bsearch%5D=&moderation_task_metadata_filter_admin%5Bstatuses%5D%5B0%5D=200&moderation_task_metadata_filter_admin%5Btype%5D=event&moderation_task_metadata_filter_admin%5BmoderatorId%5D=13530330&moderation_task_metadata_filter_admin%5Bmoderator%5D=&moderation_task_metadata_filter_admin%5BpostModeration%5D=&moderation_task_metadata_filter_admin%5BcompletedAtFrom%5D=&moderation_task_metadata_filter_admin%5BcompletedAtTo%5D=&sort=a.id&direction=asc&page=1")
+      driver.get("https://dobro.ru/admin/abstract/moderation-tasks/?moderation_task_metadata_filter_admin%5Bsearch%5D=&moderation_task_metadata_filter_admin%5Bstatuses%5D%5B%5D=200&moderation_task_metadata_filter_admin%5Btype%5D=event&moderation_task_metadata_filter_admin%5BmoderatorId%5D=15082883&moderation_task_metadata_filter_admin%5Bmoderator%5D=&moderation_task_metadata_filter_admin%5BpostModeration%5D=1&moderation_task_metadata_filter_admin%5BcompletedAtFrom%5D=&moderation_task_metadata_filter_admin%5BcompletedAtTo%5D=&isFiltersOpen=1")
 
 
 def accept(driver):
